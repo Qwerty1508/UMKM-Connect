@@ -34,7 +34,7 @@
                     id="password"
                     name="password"
                     type="password"
-                    class="mt-1 block w-3/4"
+                    class="mt-1 block w-3/4 rounded-lg border-slate-200"
                     placeholder="{{ __('Password') }}"
                 />
 
@@ -46,7 +46,7 @@
                     {{ __('Cancel') }}
                 </x-secondary-button>
 
-                <x-danger-button class="ms-3">
+                <x-danger-button class="ml-3">
                     {{ __('Delete Account') }}
                 </x-danger-button>
             </div>
