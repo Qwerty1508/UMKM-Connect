@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="description" content="@yield('meta_description', 'UMKM Connect - Platform Digital UMKM Indonesia')">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ $header ?? config('app.name', 'Laravel') }} - UMKM Connect</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

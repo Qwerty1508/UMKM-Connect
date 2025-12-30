@@ -4,8 +4,25 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="description" content="{{ $description ?? 'UMKM Connect - Temukan produk lokal terbaik dari UMKM di sekitarmu. Dukung ekonomi lokal, belanja mudah dan aman.' }}">
+        <meta name="keywords" content="UMKM, Marketplace, Produk Lokal, Indonesia, UKM, Jual Beli Online, {{ $keywords ?? '' }}">
+        <meta name="author" content="UMKM Connect">
+        
+        {{-- Open Graph / Facebook --}}
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ url()->current() }}">
+        <meta property="og:title" content="{{ $title ?? config('app.name', 'Laravel') }}">
+        <meta property="og:description" content="{{ $description ?? 'Temukan produk lokal terbaik dari UMKM di sekitarmu.' }}">
+        <meta property="og:image" content="{{ asset('images/og-image.jpg') }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        {{-- Twitter --}}
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="{{ url()->current() }}">
+        <meta property="twitter:title" content="{{ $title ?? config('app.name', 'Laravel') }}">
+        <meta property="twitter:description" content="{{ $description ?? 'Temukan produk lokal terbaik dari UMKM di sekitarmu.' }}">
+        <meta property="twitter:image" content="{{ asset('images/og-image.jpg') }}">
+
+        <title>{{ $title ?? config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

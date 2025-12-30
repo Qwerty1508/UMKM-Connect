@@ -39,9 +39,9 @@ Route::domain('{store:slug}.' . env('APP_URL', 'localhost'))->group(function () 
     Route::get('/', TenantStorefront::class)->name('tenant.home');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::view('/dashboard', 'dashboard')
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
