@@ -20,12 +20,18 @@ Route::get('/orders', OrderHistory::class)->name('orders.index');
 use App\Livewire\SellerDashboard;
 use App\Livewire\ProductManager;
 use App\Livewire\SalesReports;
+use App\Livewire\AdminDashboard;
+use App\Livewire\UserManagement;
+use App\Livewire\SystemConfiguration;
 
 Route::get('/orders/{order}', OrderTracking::class)->name('orders.show');
 Route::get('/register-umkm', SellerRegistration::class)->name('seller.register');
 Route::get('/seller/dashboard', SellerDashboard::class)->name('seller.dashboard');
 Route::get('/seller/products', ProductManager::class)->name('seller.products');
 Route::get('/seller/reports', SalesReports::class)->name('seller.reports');
+Route::get('/admin/dashboard', AdminDashboard::class)->name('admin.dashboard');
+Route::get('/admin/users', UserManagement::class)->name('admin.users');
+Route::get('/admin/settings', SystemConfiguration::class)->name('admin.settings');
 
 Route::domain('{store:slug}.' . env('APP_URL', 'localhost'))->group(function () {
     Route::get('/', TenantStorefront::class)->name('tenant.home');

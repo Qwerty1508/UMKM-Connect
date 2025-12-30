@@ -35,10 +35,21 @@
             {{-- Header Mobile --}}
             <header class="flex items-center justify-between bg-white px-6 py-4 shadow-sm lg:hidden">
                 <span class="font-bold text-slate-800">Seller Panel</span>
-                <button class="text-slate-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
-                </button>
+                <div class="flex items-center gap-4">
+                    <livewire:notification-center />
+                    <button class="text-slate-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+                    </button>
+                </div>
             </header>
+
+            {{-- Header Desktop (Optional, if needed, currently sidebar only) --}}
+            <div class="hidden lg:flex justify-end px-6 py-4 bg-white shadow-sm">
+                <div class="flex items-center gap-4">
+                     <livewire:notification-center />
+                     <div class="h-8 w-8 rounded-full bg-slate-200"></div>
+                </div>
+            </div>
 
             {{ $slot }}
         </main>
